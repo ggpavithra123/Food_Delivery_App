@@ -6,44 +6,44 @@ export const getUser = () =>
     : null;
 
 export const login = async (email, password) => {
-  const { data } = await axios.post('http://localhost:5000/api/users/login', { email, password });
+  const { data } = await axios.post('https://food-delivery-app-lnv6.onrender.com/api/users/login', { email, password });
   localStorage.setItem('user', JSON.stringify(data));
   return data;
 };
 
 export const register = async registerData => {
-  const { data } = await axios.post('http://localhost:5000/api/users/register', registerData);
+  const { data } = await axios.post('https://food-delivery-app-lnv6.onrender.com/api/users/register', registerData);
   localStorage.setItem('user', JSON.stringify(data));
   return data;
 };
 
 export const updateProfile = async user => {
-  const { data } = await axios.put('http://localhost:5000/api/users/updateProfile', user);
+  const { data } = await axios.put('https://food-delivery-app-lnv6.onrender.com/api/users/updateProfile', user);
   localStorage.setItem('user', JSON.stringify(data));
   return data;
 };
 
 export const changePassword = async passwords => {
-  await axios.put('http://localhost:5000/api/users/changePassword', passwords);
+  await axios.put('https://food-delivery-app-lnv6.onrender.com/api/users/changePassword', passwords);
 };
 
 export const getAll = async searchTerm => {
-  const { data } = await axios.get('http://localhost:5000/api/users/getAll/' + (searchTerm ?? ''));
+  const { data } = await axios.get('https://food-delivery-app-lnv6.onrender.com/api/users/getAll/' + (searchTerm ?? ''));
   return data;
 };
 
 export const toggleBlock = async userId => {
-  const { data } = await axios.put('http://localhost:5000/api/users/toggleBlock/' + userId);
+  const { data } = await axios.put('https://food-delivery-app-lnv6.onrender.com/api/users/toggleBlock/' + userId);
   return data;
 };
 
 export const getById = async userId => {
-  const { data } = await axios.get('http://localhost:5000/api/users/getById/' + userId);
+  const { data } = await axios.get('https://food-delivery-app-lnv6.onrender.com/api/users/getById/' + userId);
   return data;
 };
 
 export const updateUser = async userData => {
-  const { data } = await axios.put('http://localhost:5000/api/users/update', userData);
+  const { data } = await axios.put('https://food-delivery-app-lnv6.onrender.com/api/users/update', userData);
   return data;
 };
 
