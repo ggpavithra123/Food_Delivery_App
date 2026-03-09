@@ -5,42 +5,42 @@ import axios from 'axios';
 //import axios from 'axios';
 
 export const getAll = async () => {
-  const { data } = await axios.get('http://localhost:5000/api/foods');
+  const { data } = await axios.get('https://food-delivery-app-lnv6.onrender.com/api/foods');
   return data;
 };
 
 export const search = async searchTerm => {
-  const { data } = await axios.get('http://localhost:5000/api/foods/search/' + searchTerm);
+  const { data } = await axios.get('https://food-delivery-app-lnv6.onrender.com/api/foods/search/' + searchTerm);
   return data;
 };
 
 export const getAllTags = async () => {
-  const { data } = await axios.get('http://localhost:5000/api/foods/tags');
+  const { data } = await axios.get('https://food-delivery-app-lnv6.onrender.com/api/foods/tags');
   return data;
 };
 
 export const getAllByTag = async tag => {
   if (tag === 'All') return getAll();
-  const { data } = await axios.get('http://localhost:5000/api/foods/tags/' + tag);
+  const { data } = await axios.get('https://food-delivery-app-lnv6.onrender.com/api/foods/tags/' + tag);
   return data;
 };
 
 export const getById = async foodId => {
-  const { data } = await axios.get('http://localhost:5000/api/foods/' + foodId);
+  const { data } = await axios.get('https://food-delivery-app-lnv6.onrender.com/api/foods/' + foodId);
   return data;
 };
 
 
 export async function deleteById(foodId) {
-  await axios.delete('http://localhost:5000/api/foods/' + foodId);
+  await axios.delete('https://food-delivery-app-lnv6.onrender.com/api/foods/' + foodId);
 }
 
 export async function update(food) {
-  await axios.put('http://localhost:5000/api/foods', food);
+  await axios.put('https://food-delivery-app-lnv6.onrender.com/api/foods', food);
 }
 
 export async function add(food) {
-  const { data } = await axios.post('http://localhost:5000/api/foods', food);
+  const { data } = await axios.post('https://food-delivery-app-lnv6.onrender.com/api/foods', food);
   return data;
 }
 
