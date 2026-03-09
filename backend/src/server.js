@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(
   cors({
     credentials: true,
-    origin: ['http://localhost:3003'],
+    origin: ['http://localhost:3003','https://food-delivery-app-phi-sepia.vercel.app'],
   })
 );
 
