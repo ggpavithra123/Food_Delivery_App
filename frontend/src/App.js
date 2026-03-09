@@ -3,22 +3,21 @@ import AppRoutes from "./AppRoutes";
 import Header from "./components/Header/Header";
 import Loading from "./components/Loading/Loading";
 import { useLoading } from "./hooks/useLoading";
-import { setLoadingInterceptor} from "./interceptors/loadinginterceptor";
-
+import { setLoadingInterceptor } from "./interceptors/loadinginterceptor";
 
 function App() {
-  const { showLoading, hideLoading} = useLoading();
+  const { showLoading, hideLoading } = useLoading();
 
   useEffect(() => {
-    setLoadingInterceptor({showLoading,hideLoading});
-  },[]);
+    setLoadingInterceptor({ showLoading, hideLoading });
+  }, [showLoading, hideLoading]);
 
   return (
-    <>
-    <Loading/>
-    <Header></Header>
-    <AppRoutes/>
-    </>
+    <div>
+      <Loading />
+      <Header />
+      <AppRoutes />
+    </div>
   );
 }
 
