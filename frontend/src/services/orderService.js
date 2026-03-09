@@ -16,7 +16,7 @@ export const createOrder = async order => {
     console.log("Order is:", order);
 
     const { data } = await axios.post(
-      'http://localhost:5000/api/orders/create',
+      'https://food-delivery-app-lnv6.onrender.com/api/orders/create',
       order
     );
 
@@ -33,7 +33,7 @@ export const createOrder = async order => {
 
 export const getNewOrder = async () => {
   const token = localStorage.getItem("token");
-  const { data } = await axios.get("http://localhost:5000/api/orders/getNewOrder", {
+  const { data } = await axios.get("https://food-delivery-app-lnv6.onrender.com/api/orders/getNewOrder", {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -51,7 +51,7 @@ export const getNewOrderForCurrentUser = async () => {
   const token = localStorage.getItem("token");
 
   const { data } = await axios.get(
-    "http://localhost:5000/api/orders/newOrderForCurrentUser",
+    "https://food-delivery-app-lnv6.onrender.com/api/orders/newOrderForCurrentUser",
     {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -64,22 +64,22 @@ export const getNewOrderForCurrentUser = async () => {
 
 export const pay = async paymentId => {
   try {
-    const { data } = await axios.put('http://localhost:5000/api/orders/pay', { paymentId });
+    const { data } = await axios.put('https://food-delivery-app-lnv6.onrender.com/api/orders/pay', { paymentId });
     return data;
   } catch (error) {}
 };
 
 export const trackOrderById = async orderId => {
-  const { data } = await axios.get('http://localhost:5000/api/orders/track/' + orderId);
+  const { data } = await axios.get('https://food-delivery-app-lnv6.onrender.com/api/orders/track/' + orderId);
   return data;
 };
 
 export const getAll = async state => {
-  const { data } = await axios.get(`http://localhost:5000/api/orders/${state ?? ''}`);
+  const { data } = await axios.get(`https://food-delivery-app-lnv6.onrender.com/api/orders/${state ?? ''}`);
   return data;
 };
 
 export const getAllStatus = async () => {
-  const { data } = await axios.get(`http://localhost:5000/api/orders/allstatus`);
+  const { data } = await axios.get(`https://food-delivery-app-lnv6.onrender.com/api/orders/allstatus`);
   return data;
 };
