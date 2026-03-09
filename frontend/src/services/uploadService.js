@@ -9,7 +9,7 @@ export const uploadImage = async event => {
 
   const formData = new FormData();
   formData.append('image', image, image.name);
-  const response = await axios.post('http://localhost:5000/api/upload', formData, {
+  const response = await axios.post('https://food-delivery-app-lnv6.onrender.com/api/upload', formData, {
     onUploadProgress: ({ progress }) => {
       if (toastId) toast.update(toastId, { progress });
       else toastId = toast.success('Uploading...', { progress });
